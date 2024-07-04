@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        button {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Largest Number</h2>
+        <button onclick="findLargest()">Find Largest</button>
+        <p id="largestResult"></p>
+    </div>
+
+    <div class="container">
+        <h2>Odd or Even</h2>
+        <button onclick="checkOddEven()">Check Odd or Even</button>
+        <p id="oddEvenResult"></p>
+    </div>
+
+    <div class="container">
+        <h2>Positive or Negative</h2>
+        <button onclick="checkPositiveNegative()">Check Positive or Negative</button>
+        <p id="posNegResult"></p>
+    </div>
+
+    <script>
+        function findLargest() {
+            let num1 = parseFloat(prompt("Enter the first number:"));
+            let num2 = parseFloat(prompt("Enter the second number:"));
+            let largest;
+
+            if (num1 > num2) {
+                largest = num1;
+            } else if (num2 > num1) {
+                largest = num2;
+            } else {
+                largest = "Both numbers are equal.";
+            }
+
+            document.getElementById('largestResult').innerText = `Largest: ${largest}`;
+        }
+
+        function checkOddEven() {
+            let num = parseInt(prompt("Enter a number:"));
+            let result;
+
+            if (num % 2 === 0) {
+                result = `${num} is even.`;
+            } else {
+                result = `${num} is odd.`;
+            }
+
+            document.getElementById('oddEvenResult').innerText = result;
+        }
+
+        function checkPositiveNegative() {
+            let num = parseFloat(prompt("Enter a number:"));
+            let result;
+
+            if (num > 0) {
+                result = `${num} is positive.`;
+            } else if (num < 0) {
+                result = `${num} is negative.`;
+            } else {
+                result = `${num} is zero.`;
+            }
+
+            document.getElementById('posNegResult').innerText = result;
+        }
+    </script>
+</body>
+</html>
